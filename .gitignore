@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# API keys and secrets
+.env
+
+# Test outputs
+*.out
+*.tmp
+
+# Misc
+*.bak
+*.swp
+*.swo
+
+# PDF test files
+*.pdf
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Pyright
+.pyright/
+
+# Others
+*.sqlite3
