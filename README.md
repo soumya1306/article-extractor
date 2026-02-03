@@ -36,6 +36,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. Setup env file:
+GEMINI_API_KEY=your-genmini-apikey
+AZURE_ENDPOINT=endpoint-for-your-model
+AZURE_API_KEY=api-key-for-your-model
+
 ## Usage
 
 1. **Start the application:**
