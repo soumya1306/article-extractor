@@ -1,22 +1,8 @@
-"""
-PDF text extraction utilities for research articles
-"""
 
 from pypdf import PdfReader
-from typing import Optional, Dict, Any
-import io
 
 
-def extract_text_from_pdf(pdf_file) -> Dict[str, Any]:
-    """
-    Extract text from a PDF file.
-    
-    Args:
-        pdf_file: File-like object or path to PDF
-        
-    Returns:
-        Dictionary containing extracted text and metadata
-    """
+def extract_text_from_pdf(pdf_file):
     try:
         # Create PDF reader
         reader = PdfReader(pdf_file)
@@ -55,16 +41,7 @@ def extract_text_from_pdf(pdf_file) -> Dict[str, Any]:
         }
 
 
-def extract_text_from_abstract(abstract_text: str) -> Dict[str, Any]:
-    """
-    Process plain text abstract input.
-    
-    Args:
-        abstract_text: Plain text abstract or paper excerpt
-        
-    Returns:
-        Dictionary containing processed text
-    """
+def extract_text_from_abstract(abstract_text):
     if not abstract_text.strip():
         return {
             'success': False,
@@ -84,17 +61,7 @@ def extract_text_from_abstract(abstract_text: str) -> Dict[str, Any]:
     }
 
 
-def preprocess_text(text: str, max_length: Optional[int] = None) -> str:
-    """
-    Preprocess extracted text for better AI processing.
-    
-    Args:
-        text: Raw extracted text
-        max_length: Maximum character length (for token limit management)
-        
-    Returns:
-        Preprocessed text
-    """
+def preprocess_text(text, max_length = None):
     # Remove excessive whitespace
     lines = text.split('\n')
     cleaned_lines = [line.strip() for line in lines if line.strip()]
@@ -107,14 +74,5 @@ def preprocess_text(text: str, max_length: Optional[int] = None) -> str:
     return cleaned_text
 
 
-def estimate_tokens(text: str) -> int:
-    """
-    Rough estimation of token count (approximately 4 characters per token).
-    
-    Args:
-        text: Input text
-        
-    Returns:
-        Estimated token count
-    """
+def estimate_tokens(text):
     return len(text) // 4
